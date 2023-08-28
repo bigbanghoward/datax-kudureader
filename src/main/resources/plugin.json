@@ -1,0 +1,6 @@
+{
+  "name": "kudureader",
+  "class": "com.alibaba.datax.plugin.reader.kudureader.KuduReader",
+  "description": "阿里云DataX的KuduReader插件",
+  "developer": "bigbanghoward"
+}

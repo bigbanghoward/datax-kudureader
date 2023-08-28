@@ -1,0 +1,46 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 1
+      },
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0.02
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "kudureader",
+          "parameter": {
+            "columns": [
+              "*"
+            ],
+            "connection": {
+              "kuduMaster": "yourKuduMaster",
+              "table": "kuduTableName"
+            },
+            "outputExtendParam": {
+              "扩展参数key": "扩展参数value"
+            },
+            "where": {
+              "column": "p_date",
+              "compare": "=",
+              "value": "2023-06-23"
+            }
+          }
+        },
+        "writer": {
+          "name": "streamwriter",
+          "parameter": {
+            "path": "/tmp",
+            "fileName" : "kudu_table_data",
+            "print": true,
+            "encoding": "UTF-8"
+          }
+        }
+      }
+    ]
+  }
+}
